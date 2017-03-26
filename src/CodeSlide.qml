@@ -45,6 +45,7 @@ import QtQuick 2.0
 Slide {
     id: slide;
 
+
     property string codeFontFamily: parent.codeFontFamily;
     property string code;
     property real codeFontSize: baseFontSize * 0.6;
@@ -74,8 +75,6 @@ Slide {
                              });
         }
     }
-
-
 
     ListModel {
         id: listModel

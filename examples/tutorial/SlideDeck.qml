@@ -40,11 +40,10 @@
 ****************************************************************************/
 
 
-import Qt.labs.presentation 1.0
+import Qt.labs.presentation 1.1
 import QtQuick 2.0
 
-Presentation
-{
+Presentation {
     id: presentation
 
     width: 1280
@@ -53,6 +52,22 @@ Presentation
     SlideCounter {}
     Clock {}
 
+    TwoContentSlide {
+        title: "TwoContentSlide {} Element"
+        leftContent: [
+            "Toplevel element",
+            "Defines background",
+            "Foreground color",
+        ]
+        rightContent: [
+            "Bullet points",
+            "Should be short",
+            "And to the point",
+            " Sub point",
+            "  Sub Sub point",
+            " Sub point"
+        ]
+    }
 
     Slide {
         centeredText: "Use [space] or [keypad] to see intro"
@@ -65,9 +80,12 @@ Presentation
             "Defines background",
             "Foreground color",
         ]
+    }
 
-        CodeSection {
-            text: "Presentation
+    CodeSlide {
+        property string codeFontFamily: "Courier New"
+        title: "Presentation {} Element (Code)"
+        code: "Presentation
 {
     width: 640
     height: 360
@@ -86,7 +104,6 @@ Presentation
     Slide { ... }
     ...
 }"
-        }
     }
 
 
@@ -100,22 +117,24 @@ Presentation
             "  Sub Sub point",
             " Sub point"
         ]
+    }
 
-        CodeSection {
+    CodeSlide {
+        property string codeFontFamily: "Courier New"
 
-            text: "Slide {\n" +
-                  "    id: areaSlide\n" +
-                  "    title: \"Slide {} Element\"\n" +
-                  "    content: [\n" +
-                  "              \"Bullet points\",\n" +
-                  "              \"Should be short\",\n" +
-                  "              \"And to the point\",\n" +
-                  "              \" Sub point\",\n" +
-                  "              \"  Sub Sub point\",\n" +
-                  "              \" Sub point\"\n" +
-                  "             ]\n" +
-                  "}\n"
-        }
+        title: "Slide {} Element (Code)"
+        code: "Slide {\n" +
+              "    id: areaSlide\n" +
+              "    title: \"Slide {} Element\"\n" +
+              "    content: [\n" +
+              "              \"Bullet points\",\n" +
+              "              \"Should be short\",\n" +
+              "              \"And to the point\",\n" +
+              "              \" Sub point\",\n" +
+              "              \"  Sub Sub point\",\n" +
+              "              \" Sub point\"\n" +
+              "             ]\n" +
+              "}\n"
     }
 
     Slide {
@@ -168,7 +187,7 @@ Presentation
 
 
     CodeSlide {
-        title: "CodeSlide {} Element"
+        title: "CodeSlide {} Element (Code)"
         code:
 "CodeSlide {
     title: \"CodeSlide {} Element\"
